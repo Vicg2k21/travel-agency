@@ -1,0 +1,4 @@
+House,House,300.0,3,true
+Hotel,Hotel A,200.0,50,true
+House,Cabin Cozy,150.0,2,false
+House,Villa Luxe,500.0,4,true

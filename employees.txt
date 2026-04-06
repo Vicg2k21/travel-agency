@@ -1,0 +1,2 @@
+Employee,-hIvCsS{KwKw'eEt,false
+Manager,-hIvCsS{KwKw'eEt,true

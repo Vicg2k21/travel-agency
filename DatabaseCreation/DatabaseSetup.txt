@@ -1,0 +1,73 @@
+CREATE DATABASE vgallegossp252338;
+USE vgallegossp252338;
+
+CREATE TABLE customers (
+    idNumber VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phoneNumber VARCHAR(20),
+    address VARCHAR(200),
+    logInName VARCHAR(50) UNIQUE NOT NULL,
+    password VARCHAR(100) NOT NULL,
+    totalSpending DOUBLE DEFAULT 0.0
+);
+
+CREATE TABLE travelagencyemployees (
+    idNumber VARCHAR(20) PRIMARY KEY,
+    name VARCHAR(100) NOT NULL,
+    phoneNumber VARCHAR(20),
+    address VARCHAR(200),
+    password VARCHAR(100) NOT NULL,
+    isManager BOOLEAN DEFAULT FALSE
+);
+
+CREATE TABLE lodgings (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(100) UNIQUE NOT NULL,
+    pricePerNight DOUBLE NOT NULL,
+    type VARCHAR(10) NOT NULL,           -- 'House' or 'Hotel'
+    numberOfBedrooms INT,                -- Only used for House
+    hasPool BOOLEAN,                     -- Only used for House
+    numberOfRooms INT,                   -- Only used for Hotel
+    hasGym BOOLEAN                       -- Only used for Hotel
+);
+
+CREATE TABLE orders (
+    orderId INT AUTO_INCREMENT PRIMARY KEY,
+    lodgeId INT NOT NULL,
+    customerId VARCHAR(20) NOT NULL,
+    checkIn DATE NOT NULL,
+    checkOut DATE NOT NULL,
+    totalCost DOUBLE NOT NULL,
+    FOREIGN KEY (lodgeId) REFERENCES lodgings(id),
+    FOREIGN KEY (customerId) REFERENCES customers(idNumber)
+);
+
+CREATE TABLE lodge_images (
+    imageId INT AUTO_INCREMENT PRIMARY KEY,
+    lodgeId INT NOT NULL,
+    imageData LONGBLOB NOT NULL,
+    FOREIGN KEY (lodgeId) REFERENCES lodgings(id) ON DELETE CASCADE
+);
+
+INSERT INTO travelagencyemployees 
+(idNumber, name, phoneNumber, address, password, isManager)
+VALUES
+('E001', 'Employee', '555-1111', '123 Work Ave', '-hIvCsS{KwKw''eEt', false),
+('M001', 'Manager', '555-2222', '456 Admin Blvd', '-hIvCsS{KwKw''eEt', true);
+
+INSERT INTO lodgings 
+(name, pricePerNight, type, numberOfBedrooms, hasPool, numberOfRooms, hasGym)
+VALUES
+('House', 300.0, 'House', 3, true, NULL, NULL);
+
+INSERT INTO customers (idNumber, name, phoneNumber, address, logInName, password, totalSpending)
+VALUES 
+('C1', 'mike', '555-0000', 'N/A', 'mike', ')7''6CDAr''e-hIvCs9n/i;o7m]Q', 0.0);
+
+INSERT INTO lodgings 
+(name, pricePerNight, type, numberOfBedrooms, hasPool, numberOfRooms, hasGym)
+VALUES
+('Hotel A', 200.0, 'Hotel', NULL, NULL, 50, true),
+('Cabin Cozy', 150.0, 'House', 2, false, NULL, NULL),
+('Villa Luxe', 500.0, 'House', 4, true, NULL, NULL);
+
