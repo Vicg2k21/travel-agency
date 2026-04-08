@@ -30,7 +30,7 @@ This is a Java-based desktop application developed using Apache NetBeans. The sy
 - File handling / data management
 - MySQL Workbench
 
-## 📸 Screenshots
+## 📸 Screenshot
 
 ![Application Screenshot](https://raw.githubusercontent.com/Vicg2k21/Vicg2k21/main/Images/travel.png)
 
