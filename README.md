@@ -46,5 +46,5 @@ This is a Java-based desktop application developed using Apache NetBeans. The sy
 
 ## 📂 Project Structure
 - `src/` → Source code
-- `DatabaseCreation/` → Database setup files (if applicable)
+- `DatabaseCreation/` → Database setup files
 - `*.txt` files → Data storage for users, lodgings, etc.
