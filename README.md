@@ -27,8 +27,16 @@ This is a Java-based desktop application developed using Apache NetBeans. The sy
 - Java
 - Apache NetBeans IDE
 - Object-Oriented Programming (OOP)
-- File handling / data management
-- MySQL Workbench
+- File handling (TXT-based data storage)
+- MySQL Workbench (database for lodging and structured data)
+
+## 🗄 Data Management
+This application uses a combination of database and file-based storage:
+
+- MySQL database is used to manage structured data such as lodging information.
+- TXT files are used to store user-related data such as customers and employees.
+
+This approach demonstrates flexibility in handling different types of data storage.
 
 ## 📸 Screenshot
 
@@ -46,5 +54,5 @@ This is a Java-based desktop application developed using Apache NetBeans. The sy
 
 ## 📂 Project Structure
 - `src/` → Source code
-- `DatabaseCreation/` → Database setup files
-- `*.txt` files → Data storage for users, lodgings, etc.
+- `DatabaseCreation/` → MySQL database scripts and setup
+- `*.txt` files → Data storage for customers and employees
